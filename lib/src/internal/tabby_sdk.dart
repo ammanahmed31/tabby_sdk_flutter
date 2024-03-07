@@ -35,9 +35,9 @@ class TabbySDK implements TabbyWithRemoteDataSource {
 
   final _anonymousId = uuid.v4();
 
-  late final String _apiKey;
-  late final String _host;
-  late final String _analyticsHost;
+  String? _apiKey;
+  String? _host;
+  String? _analyticsHost;
 
   @override
   void setup({
@@ -54,7 +54,7 @@ class TabbySDK implements TabbyWithRemoteDataSource {
 
   void checkSetup() {
     try {
-      _apiKey.isNotEmpty && _host.isNotEmpty;
+      _apiKey!.isNotEmpty && _host!.isNotEmpty;
     } catch (e) {
       throw 'TabbySDK did not setup.\nCall TabbySDK().setup in main.dart';
     }
@@ -76,18 +76,12 @@ class TabbySDK implements TabbyWithRemoteDataSource {
 
     debugPrint('session create status: ${response.statusCode}');
     if (response.statusCode == 200) {
-      final checkoutSession =
-          CheckoutSession.fromJson(jsonDecode(response.body));
+      final checkoutSession = CheckoutSession.fromJson(jsonDecode(response.body));
 
-      final installmentsPlan =
-          checkoutSession.configuration.availableProducts.installments?.first;
+      final installmentsPlan = checkoutSession.configuration.availableProducts.installments?.first;
 
       final availableProducts = TabbySessionAvailableProducts(
-        installments: installmentsPlan != null
-            ? TabbyProduct(
-                type: TabbyPurchaseType.installments,
-                webUrl: installmentsPlan.webUrl)
-            : null,
+        installments: installmentsPlan != null ? TabbyProduct(type: TabbyPurchaseType.installments, webUrl: installmentsPlan.webUrl) : null,
       );
 
       final tabbyCheckoutSession = TabbySession(
@@ -137,7 +131,7 @@ class TabbySDK implements TabbyWithRemoteDataSource {
     }
     try {
       await http.post(
-        Uri.parse(_analyticsHost),
+        Uri.parse(_analyticsHost ?? ''),
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
