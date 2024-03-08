@@ -158,6 +158,10 @@ source_span
 2.18
 file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/source_span-1.10.0/
 file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/source_span-1.10.0/lib/
+sprintf
+2.12
+file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/sprintf-7.0.0/
+file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/sprintf-7.0.0/lib/
 stack_trace
 2.18
 file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/stack_trace-1.11.0/
@@ -191,9 +195,9 @@ typed_data
 file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/typed_data-1.3.2/
 file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/typed_data-1.3.2/lib/
 uuid
-2.12
-file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/uuid-3.0.7/
-file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/uuid-3.0.7/lib/
+2.14
+file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/uuid-4.2.2/
+file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/uuid-4.2.2/lib/
 vector_math
 2.14
 file:///Users/ammanahmed/.pub-cache/hosted/pub.dev/vector_math-2.1.4/
